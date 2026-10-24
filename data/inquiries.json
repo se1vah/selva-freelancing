@@ -1,0 +1,26 @@
+[
+  {
+    "id": "REQ-1001",
+    "fullName": "Karthik Raja",
+    "email": "karthik@freshgrocers.in",
+    "phone": "9840123456",
+    "service": "App Development",
+    "projectDescription": "We need an Android grocery delivery app for our regional retail chain with real-time order tracking.",
+    "preferredDate": "2026-11-02",
+    "status": "reviewed",
+    "createdAt": "2026-10-23T14:30:00Z",
+    "type": "consultation"
+  },
+  {
+    "id": "REQ-1002",
+    "fullName": "Ananya Sharma",
+    "email": "ananya@texlogistics.com",
+    "phone": "9945087654",
+    "service": "Business Application Development",
+    "projectDescription": "Looking for a custom invoice and warehouse stock reconciliation dashboard with thermal print receipts.",
+    "preferredDate": "2026-11-05",
+    "status": "pending",
+    "createdAt": "2026-10-24T09:15:00Z",
+    "type": "consultation"
+  }
+]
