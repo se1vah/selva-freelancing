@@ -98,7 +98,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0F19] text-slate-100 flex flex-col font-['Plus_Jakarta_Sans',sans-serif]">
+    <div className="min-h-screen bg-white text-slate-800 flex flex-col font-['Plus_Jakarta_Sans',sans-serif]">
       {/* Sticky Top Bar Navbar */}
       <Navbar
         onOpenInquiryHub={() => setIsInquiryHubOpen(true)}

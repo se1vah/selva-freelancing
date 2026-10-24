@@ -1,21 +1,21 @@
 import React from 'react';
-import { Star, Quote } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { TESTIMONIALS } from '../data/portfolioData';
 
 export const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-20 lg:py-28 relative border-t border-slate-800/80">
+    <section id="testimonials" className="py-20 lg:py-28 relative border-t border-slate-200 bg-slate-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-2xl mb-16">
-          <div className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2">
+          <div className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">
             05. Client Feedback
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Trusted by Business Owners & Founders
           </h2>
-          <p className="mt-3 text-base text-slate-300 leading-relaxed">
+          <p className="mt-3 text-base text-slate-600 leading-relaxed">
             Real feedback from organizations that rely on software engineered by Selva Freelancing.
           </p>
         </div>
@@ -25,7 +25,7 @@ export const Testimonials: React.FC = () => {
           {TESTIMONIALS.map((t) => (
             <div
               key={t.id}
-              className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-lg shadow-black/20"
+              className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
             >
               <div>
                 {/* 5-star rating */}
@@ -36,22 +36,22 @@ export const Testimonials: React.FC = () => {
                 </div>
 
                 {/* Quote */}
-                <p className="text-sm sm:text-[14.5px] text-slate-200 leading-relaxed italic mb-6">
+                <p className="text-sm sm:text-[14.5px] text-slate-700 leading-relaxed italic mb-6">
                   "{t.quote}"
                 </p>
               </div>
 
               {/* Client Info: Clean unboxed metadata with separators */}
-              <div className="pt-4 border-t border-slate-800">
-                <div className="font-bold text-white text-sm">
+              <div className="pt-4 border-t border-slate-100">
+                <div className="font-bold text-slate-900 text-sm">
                   {t.clientName}
                 </div>
-                <div className="text-xs text-slate-400 mt-0.5">
+                <div className="text-xs text-slate-600 mt-0.5">
                   <span>{t.clientRole}</span>
-                  <span aria-hidden="true" className="mx-1.5 text-slate-600">·</span>
-                  <span className="text-slate-300">{t.company}</span>
+                  <span aria-hidden="true" className="mx-1.5 text-slate-300">·</span>
+                  <span className="text-slate-800 font-medium">{t.company}</span>
                 </div>
-                <div className="text-[11px] font-mono text-blue-400 mt-2">
+                <div className="text-[11px] font-mono text-blue-600 font-medium mt-2">
                   Delivered: {t.projectDelivered}
                 </div>
               </div>

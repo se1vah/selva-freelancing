@@ -36,18 +36,18 @@ export const About: React.FC<AboutProps> = ({ onScrollToConsultation }) => {
   ];
 
   return (
-    <section id="about" className="py-20 lg:py-28 relative border-t border-slate-800/80">
+    <section id="about" className="py-20 lg:py-28 relative border-t border-slate-200 bg-slate-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-2xl mb-16">
-          <div className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2">
+          <div className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">
             01. About Me
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Engineering Digital Products That Deliver Tangible Value
           </h2>
-          <p className="mt-4 text-base text-slate-300 leading-relaxed">
+          <p className="mt-4 text-base text-slate-600 leading-relaxed">
             I am a dedicated freelance software developer driven by the satisfaction of turning complex business friction into intuitive, dependable software.
           </p>
         </div>
@@ -55,32 +55,32 @@ export const About: React.FC<AboutProps> = ({ onScrollToConsultation }) => {
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           
-          {/* Left Column: Profile Card & Developer Persona */}
+          {/* Left Column: Profile Card */}
           <div className="lg:col-span-5">
-            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 relative overflow-hidden shadow-xl shadow-black/30">
+            <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
               
-              {/* Profile Image & Visual Placeholder Container */}
+              {/* Profile Image & Avatar Container */}
               <div className="relative mb-6">
-                <div className="w-full aspect-square max-w-[280px] mx-auto rounded-xl bg-gradient-to-tr from-slate-950 via-slate-900 to-indigo-950 border border-slate-800/90 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group">
+                <div className="w-full aspect-square max-w-[280px] mx-auto rounded-xl bg-gradient-to-tr from-slate-50 via-blue-50/30 to-indigo-50/40 border border-slate-200 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group">
                   
                   {/* Subtle technical background grid */}
-                  <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] opacity-20 pointer-events-none" />
+                  <div className="absolute inset-0 bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:16px_16px] opacity-10 pointer-events-none" />
 
-                  {/* Stylized Developer Avatar Representation */}
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-700 flex items-center justify-center text-white shadow-lg shadow-blue-600/30 mb-4 border-2 border-white/10">
+                  {/* Stylized Developer Avatar */}
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20 mb-4 border-2 border-white">
                     <span className="font-mono text-3xl font-black tracking-tight">S</span>
                   </div>
 
                   <div className="relative z-10">
-                    <h3 className="text-lg font-bold text-white tracking-tight">
+                    <h3 className="text-lg font-bold text-slate-900 tracking-tight">
                       {CONTACT_INFO.founderName}
                     </h3>
-                    <p className="text-xs text-blue-400 font-medium mt-0.5">
+                    <p className="text-xs text-blue-600 font-semibold mt-0.5">
                       Freelance Software Developer
                     </p>
-                    <div className="mt-3 flex items-center justify-center gap-2 text-[11px] text-slate-400 font-mono">
+                    <div className="mt-3 flex items-center justify-center gap-2 text-[11px] text-slate-500 font-mono">
                       <span>Available for Projects</span>
-                      <span aria-hidden="true" className="text-slate-600">·</span>
+                      <span aria-hidden="true" className="text-slate-300">·</span>
                       <span>India & Worldwide</span>
                     </div>
                   </div>
@@ -88,7 +88,7 @@ export const About: React.FC<AboutProps> = ({ onScrollToConsultation }) => {
               </div>
 
               {/* Bio summary */}
-              <div className="space-y-4 text-sm text-slate-300 leading-relaxed">
+              <div className="space-y-4 text-sm text-slate-600 leading-relaxed">
                 <p>
                   As an independent developer, I work directly with founders, retail store owners, and growing enterprises. You won't be dealing with sales executives or junior sub-contractors—every line of your mobile application or web system is architected and built by me.
                 </p>
@@ -98,13 +98,13 @@ export const About: React.FC<AboutProps> = ({ onScrollToConsultation }) => {
               </div>
 
               {/* Quick Contact Link */}
-              <div className="mt-6 pt-5 border-t border-slate-800 flex items-center justify-between">
-                <div className="text-xs text-slate-400">
+              <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
+                <div className="text-xs text-slate-500">
                   Direct Inquiries:
                 </div>
                 <a
                   href={CONTACT_INFO.phoneLink}
-                  className="text-xs font-mono font-semibold text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-xs font-mono font-semibold text-blue-600 hover:text-blue-700 transition-colors"
                 >
                   {CONTACT_INFO.phoneFormatted}
                 </a>
@@ -112,13 +112,13 @@ export const About: React.FC<AboutProps> = ({ onScrollToConsultation }) => {
             </div>
           </div>
 
-          {/* Right Column: Key Focus Areas & Work Methodology */}
+          {/* Right Column: Key Focus Areas */}
           <div className="lg:col-span-7 space-y-8">
             <div>
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-slate-900 mb-2">
                 Core Specializations
               </h3>
-              <p className="text-sm text-slate-400 mb-6">
+              <p className="text-sm text-slate-600 mb-6">
                 From mobile store checkouts on Google Play to automated back-office invoicing systems, here are the core technical domains I specialize in:
               </p>
 
@@ -128,17 +128,17 @@ export const About: React.FC<AboutProps> = ({ onScrollToConsultation }) => {
                   return (
                     <div
                       key={idx}
-                      className="p-4 sm:p-5 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition-all duration-200"
+                      className="p-4 sm:p-5 rounded-xl bg-white border border-slate-200/90 hover:border-blue-200 shadow-sm transition-all duration-200"
                     >
                       <div className="flex items-start gap-3.5">
-                        <div className="w-9 h-9 rounded-lg bg-blue-950/80 border border-blue-800/40 flex items-center justify-center text-blue-400 shrink-0 mt-0.5">
+                        <div className="w-9 h-9 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shrink-0 mt-0.5">
                           <Icon className="w-4 h-4" />
                         </div>
                         <div>
-                          <h4 className="text-sm sm:text-base font-semibold text-white">
+                          <h4 className="text-sm sm:text-base font-semibold text-slate-900">
                             {comp.title}
                           </h4>
-                          <p className="mt-1 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                          <p className="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
                             {comp.description}
                           </p>
                         </div>
@@ -150,18 +150,18 @@ export const About: React.FC<AboutProps> = ({ onScrollToConsultation }) => {
             </div>
 
             {/* Quality & Commitment Banner */}
-            <div className="p-6 rounded-2xl bg-gradient-to-r from-blue-950/40 via-slate-900 to-indigo-950/40 border border-blue-900/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="p-6 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50/50 to-white border border-blue-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <h4 className="text-sm font-bold text-white">
+                <h4 className="text-sm font-bold text-slate-900">
                   Have a specific technical requirement?
                 </h4>
-                <p className="text-xs text-slate-400 mt-0.5">
+                <p className="text-xs text-slate-600 mt-0.5">
                   Let's explore the right architecture for your budget and timeline.
                 </p>
               </div>
               <button
                 onClick={onScrollToConsultation}
-                className="px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-sm transition-all whitespace-nowrap cursor-pointer"
+                className="px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm transition-all whitespace-nowrap cursor-pointer"
               >
                 Schedule Free Discussion
               </button>

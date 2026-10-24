@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, Phone, Mail, User, CheckCircle, Clock, Download, RefreshCw, Filter, Terminal } from 'lucide-react';
+import { X, Calendar, Phone, Mail, User, Download, RefreshCw, Terminal } from 'lucide-react';
 import { BookingRecord, ContactRecord, AnyInquiry } from '../types';
 
 interface InquiryManagerModalProps {
@@ -58,23 +58,23 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-[#0D1322] border border-slate-800 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
+      <div className="bg-white border border-slate-200 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
         
         {/* Modal Top Header */}
-        <div className="px-6 py-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+        <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-blue-950 border border-blue-800/50 flex items-center justify-center text-blue-400">
+            <div className="w-8 h-8 rounded-lg bg-blue-100 border border-blue-200 flex items-center justify-center text-blue-600">
               <Terminal className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-white flex items-center gap-2">
+              <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
                 <span>Inquiry Management Hub</span>
-                <span className="text-xs font-mono font-medium text-slate-400">
+                <span className="text-xs font-mono font-semibold text-blue-600">
                   ({inquiries.length} total)
                 </span>
               </h3>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-500">
                 Live backend submissions & consultation bookings
               </p>
             </div>
@@ -84,21 +84,21 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
             <button
               onClick={onRefresh}
               title="Refresh Records"
-              className="p-2 text-slate-400 hover:text-white bg-slate-900 border border-slate-800 rounded-lg transition-colors cursor-pointer"
+              className="p-2 text-slate-600 hover:text-slate-900 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer shadow-xs"
             >
               <RefreshCw className="w-4 h-4" />
             </button>
             <button
               onClick={exportCSV}
               title="Export as CSV"
-              className="px-3 py-1.5 text-xs font-medium text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-3 py-1.5 text-xs font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
             >
-              <Download className="w-3.5 h-3.5 text-blue-400" />
+              <Download className="w-3.5 h-3.5 text-blue-600" />
               <span>Export CSV</span>
             </button>
             <button
               onClick={onClose}
-              className="p-2 text-slate-400 hover:text-white rounded-lg transition-colors cursor-pointer"
+              className="p-2 text-slate-400 hover:text-slate-700 rounded-lg transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -106,50 +106,50 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
         </div>
 
         {/* Filter Strip */}
-        <div className="px-6 py-3 bg-slate-900/60 border-b border-slate-800 flex items-center justify-between flex-wrap gap-2 text-xs">
+        <div className="px-6 py-3 bg-slate-100/60 border-b border-slate-200 flex items-center justify-between flex-wrap gap-2 text-xs">
           <div className="flex items-center gap-1.5">
-            <span className="text-slate-400 font-medium mr-1">Filter:</span>
+            <span className="text-slate-500 font-medium mr-1">Filter:</span>
             <button
               onClick={() => setFilterType('all')}
-              className={`px-2.5 py-1 rounded-md transition-colors ${
+              className={`px-2.5 py-1 rounded-md font-semibold transition-colors cursor-pointer ${
                 filterType === 'all'
-                  ? 'bg-blue-600 text-white font-medium'
-                  : 'text-slate-400 hover:text-white bg-slate-950/60'
+                  ? 'bg-blue-600 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900 bg-white border border-slate-200'
               }`}
             >
               All ({inquiries.length})
             </button>
             <button
               onClick={() => setFilterType('consultation')}
-              className={`px-2.5 py-1 rounded-md transition-colors ${
+              className={`px-2.5 py-1 rounded-md font-semibold transition-colors cursor-pointer ${
                 filterType === 'consultation'
-                  ? 'bg-blue-600 text-white font-medium'
-                  : 'text-slate-400 hover:text-white bg-slate-950/60'
+                  ? 'bg-blue-600 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900 bg-white border border-slate-200'
               }`}
             >
               Consultations ({inquiries.filter((i) => i.type === 'consultation').length})
             </button>
             <button
               onClick={() => setFilterType('general')}
-              className={`px-2.5 py-1 rounded-md transition-colors ${
+              className={`px-2.5 py-1 rounded-md font-semibold transition-colors cursor-pointer ${
                 filterType === 'general'
-                  ? 'bg-blue-600 text-white font-medium'
-                  : 'text-slate-400 hover:text-white bg-slate-950/60'
+                  ? 'bg-blue-600 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900 bg-white border border-slate-200'
               }`}
             >
               Contact Messages ({inquiries.filter((i) => i.type === 'general').length})
             </button>
           </div>
 
-          <div className="text-slate-400 font-mono text-[11px]">
+          <div className="text-slate-500 font-mono text-[11px]">
             Connected to `/api/consultations` & `/api/contact`
           </div>
         </div>
 
         {/* Inquiries Content List */}
-        <div className="p-6 overflow-y-auto space-y-4 flex-1">
+        <div className="p-6 overflow-y-auto space-y-4 flex-1 bg-white">
           {filtered.length === 0 ? (
-            <div className="py-12 text-center text-slate-400 text-sm">
+            <div className="py-12 text-center text-slate-500 text-sm">
               No inquiries found in this view.
             </div>
           ) : (
@@ -161,33 +161,33 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
               return (
                 <div
                   key={item.id}
-                  className="bg-slate-950/90 border border-slate-800/90 hover:border-slate-700 rounded-xl p-4 sm:p-5 transition-all text-xs"
+                  className="bg-slate-50/80 border border-slate-200 hover:border-slate-300 rounded-xl p-4 sm:p-5 transition-all text-xs"
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/80 pb-3 mb-3">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3 mb-3">
                     <div className="flex items-center gap-2">
-                      <span className="font-mono font-bold text-white text-sm">
+                      <span className="font-mono font-bold text-slate-900 text-sm">
                         #{item.id}
                       </span>
                       <span
                         className={`px-2 py-0.5 rounded font-mono text-[11px] font-semibold ${
                           isBooking
-                            ? 'bg-blue-950 text-blue-300 border border-blue-800/50'
-                            : 'bg-indigo-950 text-indigo-300 border border-indigo-800/50'
+                            ? 'bg-blue-100 text-blue-700 border border-blue-200'
+                            : 'bg-indigo-100 text-indigo-700 border border-indigo-200'
                         }`}
                       >
                         {isBooking ? 'Consultation Request' : 'Direct Message'}
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-3 text-slate-400">
+                    <div className="flex items-center gap-3 text-slate-500">
                       <span className="font-mono text-[11px]">
                         {new Date(item.createdAt).toLocaleDateString()}
                       </span>
                       <span
-                        className={`capitalize font-mono px-2 py-0.5 rounded text-[10px] ${
+                        className={`capitalize font-mono px-2 py-0.5 rounded text-[10px] font-semibold ${
                           item.status === 'scheduled' || item.status === 'replied'
-                            ? 'bg-emerald-950 text-emerald-300 border border-emerald-800/50'
-                            : 'bg-amber-950 text-amber-300 border border-amber-800/50'
+                            ? 'bg-emerald-100 text-emerald-800 border border-emerald-200'
+                            : 'bg-amber-100 text-amber-800 border border-amber-200'
                         }`}
                       >
                         {item.status}
@@ -196,59 +196,59 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
                   </div>
 
                   {/* Client Info Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3 font-mono text-slate-300">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3 font-mono text-slate-700">
                     <div className="flex items-center gap-1.5">
-                      <User className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-                      <span className="font-sans font-semibold text-white">{item.fullName}</span>
+                      <User className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                      <span className="font-sans font-semibold text-slate-900">{item.fullName}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                      <a href={`mailto:${item.email}`} className="hover:text-blue-400 transition-colors truncate">
+                      <a href={`mailto:${item.email}`} className="hover:text-blue-600 transition-colors truncate">
                         {item.email}
                       </a>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <Phone className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                       {item.phone ? (
-                        <a href={`tel:${item.phone}`} className="hover:text-blue-400 transition-colors">
+                        <a href={`tel:${item.phone}`} className="hover:text-blue-600 transition-colors">
                           {item.phone}
                         </a>
                       ) : (
-                        <span className="text-slate-500">Not provided</span>
+                        <span className="text-slate-400">Not provided</span>
                       )}
                     </div>
                   </div>
 
                   {/* Booking details or message */}
-                  <div className="bg-slate-900/90 rounded-lg p-3 text-slate-200 space-y-1.5">
+                  <div className="bg-white rounded-lg p-3 border border-slate-200 text-slate-700 space-y-1.5 shadow-xs">
                     {isBooking && (
-                      <div className="flex items-center gap-2 text-blue-300 font-semibold mb-1">
+                      <div className="flex items-center gap-2 text-blue-700 font-semibold mb-1">
                         <Calendar className="w-3.5 h-3.5" />
                         <span>Requested Date: {booking.preferredDate}</span>
-                        <span aria-hidden="true" className="text-slate-600">·</span>
+                        <span aria-hidden="true" className="text-slate-300">·</span>
                         <span>Service: {booking.service}</span>
                       </div>
                     )}
-                    <p className="text-slate-300 font-sans leading-relaxed">
+                    <p className="text-slate-700 font-sans leading-relaxed">
                       {isBooking ? booking.projectDescription : contact.message}
                     </p>
                   </div>
 
                   {/* Actions bar */}
                   <div className="mt-3 flex items-center justify-between text-[11px] pt-1">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 font-medium">
                       <a
                         href={`https://wa.me/${item.phone?.replace(/\D/g, '') || ''}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-emerald-400 hover:text-emerald-300 underline"
+                        className="text-emerald-700 hover:text-emerald-800 underline"
                       >
                         Open in WhatsApp
                       </a>
-                      <span className="text-slate-700">|</span>
+                      <span className="text-slate-300">|</span>
                       <a
                         href={`mailto:${item.email}?subject=Regarding your consultation request #${item.id}`}
-                        className="text-blue-400 hover:text-blue-300 underline"
+                        className="text-blue-600 hover:text-blue-700 underline"
                       >
                         Reply via Email
                       </a>
@@ -258,7 +258,7 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
                       <select
                         value={item.status}
                         onChange={(e) => onUpdateStatus(item.id, e.target.value)}
-                        className="bg-slate-900 border border-slate-800 text-[11px] rounded px-2 py-1 text-slate-300 focus:outline-none focus:border-blue-500"
+                        className="bg-white border border-slate-300 text-[11px] rounded px-2 py-1 text-slate-700 focus:outline-none focus:border-blue-600"
                       >
                         <option value="pending">Mark as Pending</option>
                         <option value="reviewed">Mark as Reviewed</option>
@@ -274,11 +274,11 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
         </div>
 
         {/* Modal Footer */}
-        <div className="px-6 py-3 bg-slate-950 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+        <div className="px-6 py-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
           <span>Selva Freelancing Management System</span>
           <button
             onClick={onClose}
-            className="px-4 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors cursor-pointer"
+            className="px-4 py-1.5 bg-slate-800 hover:bg-slate-900 text-white font-medium rounded-lg transition-colors cursor-pointer"
           >
             Close
           </button>
