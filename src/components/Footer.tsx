@@ -122,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInquiryHub, inquiryCount }
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-slate-400 font-mono">Hosting:</span>
+                <span className="text-slate-400 font-mono">Website:</span>
                 <a href={CONTACT_INFO.website} target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 font-mono font-medium text-slate-800 truncate">
                   {CONTACT_INFO.website}
                 </a>
