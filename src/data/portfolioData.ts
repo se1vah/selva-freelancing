@@ -9,7 +9,7 @@ export const CONTACT_INFO = {
   phoneLink: 'tel:8148544881',
   instagram: 'https://instagram.com/selva_6_',
   instagramHandle: '@selva_6_',
-  website: 'https://www.selva-freelancing.vercel.app',
+  website: 'https://selva-freelancing.vercel.app',
   email: 'selvacopy@gmail.com',
   location: 'Tamil Nadu, India',
   whatsappLink: 'https://wa.me/918148544881?text=Hi%20Selva,%20I%20would%20like%20to%20discuss%20a%20software%20project.',
